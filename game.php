@@ -59,6 +59,7 @@ if ($_SESSION["_win"] == 1) {
 
     <link rel="stylesheet" href="styles/game.css">
     <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/js/surprise.js"></script>
 
     <title>game</title>
 </head>

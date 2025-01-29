@@ -25,6 +25,8 @@ session_unset();
             <label for="players">Ilość graczy:</label><input style="text-align: center" type="number"
                                                              name="howMuchPlayers" id="players" class="tbx" value=1
                                                              min=1 max=3><br>
+            <label for="surprise" id="lblSurprise">Zaskocz mnie</label><input type="checkbox" name="surprise"
+                                                                              id="surprise" onclick="isChecked()"><br>
             <input type="submit" id="send" value="GRAJ">
         </form>
     </div>

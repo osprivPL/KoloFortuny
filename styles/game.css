@@ -1,0 +1,9 @@
+h3{
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.message{
+    float:left;
+    width: 50%;
+    margin-left: 0;
+}

@@ -60,7 +60,6 @@ if ($_SESSION["_win"] == 1) {
     <link rel="stylesheet" href="styles/game.css">
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/js/price.js"></script>
-    <script src="scripts/js/surprise.js"></script>
 
     <title>game</title>
 </head>
@@ -69,28 +68,28 @@ if ($_SESSION["_win"] == 1) {
 <aside>
     <table>
         <thead>
-            <tr id = "r0" >
-                <th style="background-color: #808080">CENA</th>
+            <tr>
+                <th  id = "r0" style="background-color: #808080">CENA</th>
             </tr>
         </thead>
         <tbody>
-            <tr id = "r1">
-                <td>50$</td>
+            <tr>
+                <td  id = "r1">50$</td>
             </tr>
-            <tr id = "r2">
-                <td>100$</td>
+            <tr>
+                <td id = "r2">100$</td>
             </tr>
-            <tr id = "r3">
-                <td>150$</td>
+            <tr>
+                <td id = "r3">150$</td>
             </tr>
-            <tr id = "r4">
-                <td>200$</td>
+            <tr>
+                <td id = "r4">200$</td>
             </tr>
-            <tr id = "r5">
-                <td>250$</td>
+            <tr>
+                <td id = "r5">250$</td>
             </tr>
-            <tr id = "r6">
-                <td>500$</td>
+            <tr>
+                <td id = "r6">500$</td>
             </tr>
         </tbody>
     </table>

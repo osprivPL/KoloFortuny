@@ -34,7 +34,7 @@
     ?>
 
 
-    <a href="index.php" id="send">Zagraj ponownie</a>
+    <a href="index.php" class="send">Zagraj ponownie</a>
 </div>
 </body>
 </html>

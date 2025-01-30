@@ -1,9 +1,33 @@
-h3{
+h3 {
     font-size: 32px;
     margin-bottom: 20px;
 }
-.message{
-    float:left;
+
+.message {
+    float: left;
     width: 50%;
     margin-left: 0;
+}
+
+aside {
+    width: 23%;
+    float: left;
+}
+
+main {
+    width:77%;
+    height: 80%;
+    float: left;
+}
+
+table,td {
+    border: white dotted 6px;
+    border-collapse: collapse;
+    font-size: 30px;
+}
+
+table {
+    height: 80%;
+    width: 100%;
+    text-align: center;
 }

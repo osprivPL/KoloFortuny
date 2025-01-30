@@ -59,12 +59,45 @@ if ($_SESSION["_win"] == 1) {
 
     <link rel="stylesheet" href="styles/game.css">
     <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/js/price.js"></script>
     <script src="scripts/js/surprise.js"></script>
 
     <title>game</title>
 </head>
 <body>
 <h1>KOŁO FORTUNY</h1>
+<aside>
+    <table>
+        <thead>
+            <tr id = "r0" >
+                <th style="background-color: #808080">CENA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id = "r1">
+                <td>50$</td>
+            </tr>
+            <tr id = "r2">
+                <td>100$</td>
+            </tr>
+            <tr id = "r3">
+                <td>150$</td>
+            </tr>
+            <tr id = "r4">
+                <td>200$</td>
+            </tr>
+            <tr id = "r5">
+                <td>250$</td>
+            </tr>
+            <tr id = "r6">
+                <td>500$</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button id="send" onclick="price()">LOSUJ</button>
+</aside>
+<main>
 <?php
     echo '<form method = "post">';
         echo '<h3>';
@@ -91,6 +124,7 @@ if ($_SESSION["_win"] == 1) {
     echo '</div>';
 
     echo '<div style = "clear:both"></div>';
+    echo '</main>';
 
     printSession();
 ?>

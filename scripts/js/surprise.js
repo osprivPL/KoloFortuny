@@ -6,7 +6,7 @@ function isChecked() {
         howLong.value = Math.floor(Math.random() * 8) + 4;
         howLong.readOnly = true;
 
-        players.value = Math.floor(Math.random * 2) + 1;
+        players.value = Math.floor(Math.random() * 2) + 1;
         players.readOnly = true;
     } else {
         howLong.value = 5;

@@ -94,7 +94,7 @@ if ($_SESSION["_win"] == 1) {
         </tbody>
     </table>
 
-    <button id="send" onclick="price()">LOSUJ</button>
+    <button class="send" id ="losuj" onclick="price()">LOSUJ</button>
 </aside>
 <main>
 <?php
@@ -106,7 +106,7 @@ if ($_SESSION["_win"] == 1) {
         echo '<br>';
     echo '</h3>';
     echo '<input style="text-align: center" type="text" class="tbx" placeholder="Zgaduj..." id="guess" name = "guess"><br>';
-    echo '<input type="submit" id="send" value="STRZEL">';
+    echo '<input type="submit" class="send" value="STRZEL" id = "strzel" disabled = "true">';
     echo '</form>';
 
     echo '<div style = "clear:both"></div>';
@@ -125,7 +125,9 @@ if ($_SESSION["_win"] == 1) {
     echo '<div style = "clear:both"></div>';
     echo '</main>';
 
+    echo '<div>';
     printSession();
+    echo '</div>';
 ?>
 </body>
 <script>

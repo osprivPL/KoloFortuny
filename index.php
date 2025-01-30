@@ -28,7 +28,7 @@ session_unset();
                                                              min=1 max=3><br>
             <label for="surprise" id="lblSurprise">Zaskocz mnie</label><input type="checkbox" name="surprise"
                                                                               id="surprise" onclick="isChecked()"><br>
-            <input type="submit" id="send" value="GRAJ">
+            <input type="submit" class="send" value="GRAJ">
         </form>
     </div>
 </div>

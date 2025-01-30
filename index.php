@@ -13,6 +13,7 @@ session_unset();
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/style.css">
     <title>index</title>
+    <script src="scripts/js/surprise.js"></script>
 </head>
 <body>
 <div class="container">

@@ -1,8 +1,11 @@
 <?php
 session_start();
 //error_reporting(E_ERROR | E_PARSE);
-$_SESSION["_wordLength"] = $_POST["howLong"];
-$_SESSION["_players"] = $_POST["howMuchPlayers"];
+    $_SESSION["_wordLength"] = $_POST["howLong"];
+    $_SESSION["_players"] = $_POST["howMuchPlayers"];
+    foreach ($_SESSION["_playersNames"] as $key => $value) {
+        $_SESSION["_prizes"][$key] = $value;
+    }
 ?>
 <html lang="pl">
 <head>

@@ -1,6 +1,7 @@
 <?php
 session_start();
 session_unset();
+
 //error_reporting(E_ERROR | E_PARSE);
 
 ?>
@@ -31,6 +32,10 @@ session_unset();
             <input type="submit" class="send" value="GRAJ">
         </form>
     </div>
+    <?php
+    printArr($_SERVER);
+    printArr($_COOKIE);
+    ?>
 </div>
 </body>
 </html>

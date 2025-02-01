@@ -113,6 +113,8 @@ if ($_SESSION["_win"] == 1) {
     </table>
 
     <button class="send" id ="losuj" onclick="price()">LOSUJ</button>
+    <p id = "valueP"></p>
+
 </aside>
 <main>
 <?php
@@ -145,6 +147,7 @@ if ($_SESSION["_win"] == 1) {
 
     echo '<div>';
     printSession();
+    printArr($_COOKIE);
     echo '</div>';
 ?>
 </body>

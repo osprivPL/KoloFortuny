@@ -87,16 +87,18 @@ if ($_SESSION["_win"] == 1) {
 <h1>KOŁO FORTUNY</h1>
 <?php
     echo '<table>';
+    echo '<tr class = "trh">';
     foreach ($_SESSION["_prizes"] as $key => $value) {
-        echo '<tr>';
-        echo '<td class = "tdh">' . $key . '</td>';
-        echo '</tr>';
+
+            echo '<td class = "tdh">' . $key . '</td>';
+
     }
-    foreach ($_SESSION["_prizes"] as $key => $value) {
-        echo '<tr>';
-        echo '<td style = "width: 25%" class = "tdh">' . $value . '</td>';
-        echo '</tr>';
-    }
+    echo '</tr>';
+//    foreach ($_SESSION["_prizes"] as $key => $value) {
+//        echo '<tr>';
+//        echo '<td style = "width: 25%" class = "tdh">' . $value . '</td>';
+//        echo '</tr>';
+//    }
 
     echo '</table>';
 

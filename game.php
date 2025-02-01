@@ -8,7 +8,7 @@ require "scripts/php/printArr.php";
 if (!isset($_SESSION["_correctAns"])) {
 
     for ($i = 0; $i < $_SESSION["_players"]; $i++) {
-        $_SESSION["_playersNames"][] = $_POST["nick" . $i];
+        array_push($_SESSION["_playersNames"], $_POST["nick" . $i]);
     }
     $_SESSION["_actualString"] = str_repeat("_", intval($_SESSION["_wordLength"]));
     $_SESSION["_correctAns"] = generateAns($_SESSION["_wordLength"]);
@@ -18,7 +18,7 @@ if (!isset($_SESSION["_correctAns"])) {
     $_SESSION["_turn"] = -1;
 
     foreach ($_SESSION["_playersNames"] as $key => $value) {
-        $_SESSION["_prizes"][$key] = $value;
+        $_SESSION["_prizes"][$value] = 0;
     }
 
 }
@@ -86,7 +86,7 @@ if ($_SESSION["_win"] == 1) {
 <header>
 <h1>KOŁO FORTUNY</h1>
 <?php
-    echo '<table>';
+    echo '<table id = "tablePrizes">';
     echo '<tr class = "trh">';
     foreach ($_SESSION["_prizes"] as $key => $value) {
 
@@ -94,11 +94,11 @@ if ($_SESSION["_win"] == 1) {
 
     }
     echo '</tr>';
-//    foreach ($_SESSION["_prizes"] as $key => $value) {
-//        echo '<tr>';
-//        echo '<td style = "width: 25%" class = "tdh">' . $value . '</td>';
-//        echo '</tr>';
-//    }
+    echo '<tr>';
+    foreach ($_SESSION["_prizes"] as $key => $value) {
+        echo '<td style = "width: 25%" class = "tdh">' . $value . '</td>';
+    }
+    echo '</tr>';
 
     echo '</table>';
 

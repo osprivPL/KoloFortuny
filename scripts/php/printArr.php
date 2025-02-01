@@ -11,6 +11,12 @@ function printArr(&$arr): void
 function printSession(): void
 {
     foreach ($_SESSION as $key => $value) {
-        echo $key.' '.$value.'<br>';
+        if (is_array($value)) {
+            echo $key.'=>';
+            printArr($value);
+            echo '<br>';
+        } else {
+            echo $key.'=>'.$value.'<br>';
+        }
     }
 }

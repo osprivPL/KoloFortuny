@@ -20,7 +20,7 @@ session_unset();
 
     <h1>KOŁO FORTUNY</h1>
     <div class="message">
-        <form method="post" action="game.php">
+        <form method="post" action="nicknames.php">
             <label for="howLong">Długość słowa:</label><input style="text-align: center" type="number" name="howLong"
                                                               id="howLong" class="tbx" value="7" min="3" max="11"><br>
             <label for="players">Ilość graczy:</label><input style="text-align: center" type="number"

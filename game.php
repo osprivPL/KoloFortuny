@@ -6,12 +6,17 @@ require "scripts/php/generateAns.php";
 require "scripts/php/printArr.php";
 
 if (!isset($_SESSION["_correctAns"])) {
-    $_SESSION["guessed"] = array();
-    $_SESSION["wrong"] = array();
-    $wordLength = $_POST["howLong"];
-    $_SESSION["_actualString"] = str_repeat("_", intval($wordLength));
+
+    for ($i = 0; $i < $_SESSION["_players"]; $i++) {
+        $_SESSION["_playersNames"][] = $_POST["nick" . $i];
+    }
+    $_SESSION["_actualString"] = str_repeat("_", intval($_SESSION["_wordLength"]));
+    $_SESSION["_correctAns"] = generateAns($_SESSION["_wordLength"]);
+    $_SESSION["_guessed"] = array();
+    $_SESSION["_wrong"] = array();
     $_SESSION["_win"] = 0;
-    $_SESSION["_correctAns"] = generateAns($wordLength);
+    $_SESSION["_turn"] = 0;
+
 }
 
 
@@ -32,9 +37,9 @@ if ($_SESSION['_actualString'] != $_SESSION['_correctAns']) {
             }
         }
         if ($found) {
-            $_SESSION["guessed"][] = $guess;
+            $_SESSION["__guessed"][] = $guess;
         } else {
-            $_SESSION["wrong"][] = $guess;
+            $_SESSION["_wrong"][] = $guess;
         }
 
 
@@ -114,12 +119,12 @@ if ($_SESSION["_win"] == 1) {
 
     echo '<div class="message">';
         echo '<p>POPRAWNE: </p>';
-        printArr($_SESSION["guessed"]);
+        printArr($_SESSION["__guessed"]);
     echo '</div>';
 
     echo '<div class="message">';
         echo '<p>NIEPOPRAWNE: </p>';
-        printArr($_SESSION["wrong"]);
+        printArr($_SESSION["__wrong"]);
     echo '</div>';
 
     echo '<div style = "clear:both"></div>';

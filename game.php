@@ -94,7 +94,7 @@ if ($_SESSION["_win"] == 1) {
     }
     foreach ($_SESSION["_prizes"] as $key => $value) {
         echo '<tr>';
-        echo '<td class = "tdh">' . $value . '</td>';
+        echo '<td style = "width: 25%" class = "tdh">' . $value . '</td>';
         echo '</tr>';
     }
 

@@ -12,7 +12,7 @@ session_start();
     <meta name="author" content="Michał Ożdżyński">
 
     <link rel="stylesheet" href="styles/style.css">
-    <title>nicknames</title>
+    <title>KOŁO FORTUNY</title>
 </head>
 <body>
 <div class="container">

@@ -18,7 +18,7 @@ if (isset($_SERVER['HTTP_COOKIE'])) {
     <meta name="author" content="Michał Ożdżyński">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>index</title>
+    <title>KOŁO FORTUNY</title>
     <script src="scripts/js/surprise.js"></script>
 </head>
 <body>

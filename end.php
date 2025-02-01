@@ -9,7 +9,7 @@ require "scripts/php/printArr.php";
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Michał Ożdżyński">
     <link rel="stylesheet" href="styles/style.css">
-    <title>WISIELEC</title>
+    <title>KOŁO FORTUNY</title>
 </head>
 <body>
 <div class="container">

@@ -78,7 +78,7 @@ if ($_SESSION["_win"] == 1) {
     <link rel="stylesheet" href="styles/game.css">
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/js/price.js"></script>
-    <title>game</title>
+    <title>KOŁO FORTUNY</title>
 </head>
 <body>
 <header>

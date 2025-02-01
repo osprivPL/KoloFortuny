@@ -15,10 +15,16 @@ if (!isset($_SESSION["_correctAns"])) {
     $_SESSION["_guessed"] = array();
     $_SESSION["_wrong"] = array();
     $_SESSION["_win"] = 0;
-    $_SESSION["_turn"] = 0;
+    $_SESSION["_turn"] = -1;
 
 }
 
+if ($_SESSION["_turn"] != -2) {
+    $_SESSION["_turn"]++;
+    if ($_SESSION["_turn"] == $_SESSION["_players"]) {
+        $_SESSION["_turn"] = 0;
+    }
+}
 
 
 if ($_SESSION['_actualString'] != $_SESSION['_correctAns']) {
@@ -70,6 +76,9 @@ if ($_SESSION["_win"] == 1) {
 </head>
 <body>
 <h1>KOŁO FORTUNY</h1>
+<?php
+    echo '<h2>Kolej gracza: ' . $_SESSION["_playersNames"][$_SESSION["_turn"]] . '</h2>';
+?>
 <aside>
     <table>
         <thead>

@@ -22,12 +22,12 @@
     <?php
         if ($_SESSION["_win"] == 1){
             echo '<div class="message">';
-                echo "Udało ci się wygrać w ".$_SESSION["_actualAttempts"]." próbach!";
+                echo "WYGRYWA GRACZ: ".$_SESSION["_nick".$_SESSION["_turn"]];
             echo '</div>';
         }
-        else{
-            echo '<div class="message">PRZEGRANA!</div>';
-        }
+//        else{
+//            echo '<div class="message">PRZEGRANA!</div>';
+//        }
         echo "<div class='message'>Poprawna odpowiedź: ".$_SESSION["_correctAns"]."</div>";
         
 //        printArr($_SESSION);

@@ -31,7 +31,7 @@ require "scripts/php/printArr.php";
     //        }
     echo "<div class='message'>Poprawna odpowiedź: ".$_SESSION["_correctAns"]."</div>";
 
-            printArr($_SESSION);
+//            printArr($_SESSION);
     ?>
 
 

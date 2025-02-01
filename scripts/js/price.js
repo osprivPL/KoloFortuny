@@ -1,6 +1,6 @@
 const actualColor = 808080;
 const defaultColor = 262626;
-const values = [null,50,100,150,200,250,5600]
+const values = [null,50,100,150,200,250,500]
 
 function setCookie(cname, cvalue) {
     const d = new Date();

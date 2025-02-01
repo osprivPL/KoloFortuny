@@ -16,26 +16,28 @@ if (!isset($_SESSION["_correctAns"])) {
     $_SESSION["_wrong"] = array();
     $_SESSION["_win"] = 0;
     $_SESSION["_turn"] = -1;
+    $_SESSION["_first"] = true;
 
     foreach ($_SESSION["_playersNames"] as $key => $value) {
         $_SESSION["_prizes"][$value] = 0;
     }
 
 }
-
-if ($_SESSION["_turn"] != -2) {
-    $_SESSION["_turn"]++;
-    if ($_SESSION["_turn"] == $_SESSION["_players"]) {
-        $_SESSION["_turn"] = 0;
-    }
+else {
+    $_SESSION["_first"] = false;
 }
 
 
-if ($_SESSION['_actualString'] != $_SESSION['_correctAns']) {
+if ($_SESSION["_first"]) {
+    $counter = 0;
     $guess = $_POST["guess"];
     if ($guess == $_SESSION["_correctAns"]) {
+        for ($i = 0; $i < strlen($_SESSION["_actualString"]); $i++){
+            if ($_SESSION["_actualString"][$i] == "_"){
+                $counter++;
+            }
+        }
         $_SESSION["_actualString"] = $_SESSION["_correctAns"];
-
     } else {
         $found = FALSE;
         $guess = strtolower($guess);
@@ -44,6 +46,7 @@ if ($_SESSION['_actualString'] != $_SESSION['_correctAns']) {
             if ($_SESSION["_correctAns"][$i] == $guess) {
                 $_SESSION["_actualString"][$i] = $guess;
                 $found = TRUE;
+                $counter++;
             }
         }
         if ($found) {
@@ -52,9 +55,18 @@ if ($_SESSION['_actualString'] != $_SESSION['_correctAns']) {
             $_SESSION["_wrong"][] = $guess;
         }
 
+        $_SESSION["_prizes"][$_SESSION["_playersNames"][$_SESSION["_turn"]]] += $counter * $_COOKIE["price"];
+
 
         $_POST["guess"] = '';
         $guess = '';
+    }
+}
+
+if ($_SESSION["_turn"] != -2) {
+    $_SESSION["_turn"]++;
+    if ($_SESSION["_turn"] == $_SESSION["_players"]) {
+        $_SESSION["_turn"] = 0;
     }
 }
 if ($_SESSION["_correctAns"] == $_SESSION["_actualString"]) {
@@ -167,11 +179,13 @@ if ($_SESSION["_win"] == 1) {
     echo '<div style = "clear:both"></div>';
     echo '</main>';
 
-//    echo '<div>';
+    echo '<div>';
     printSession();
-//    printArr($_COOKIE);
-//    echo '</div>';
+    printArr($_COOKIE);
+    echo '</div>';
 ?>
+
+
 </body>
 <script>
     window.onload = function () {

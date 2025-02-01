@@ -17,6 +17,10 @@ if (!isset($_SESSION["_correctAns"])) {
     $_SESSION["_win"] = 0;
     $_SESSION["_turn"] = -1;
 
+    foreach ($_SESSION["_playersNames"] as $key => $value) {
+        $_SESSION["_prizes"][$key] = $value;
+    }
+
 }
 
 if ($_SESSION["_turn"] != -2) {
@@ -79,10 +83,26 @@ if ($_SESSION["_win"] == 1) {
     <title>game</title>
 </head>
 <body>
+<header>
 <h1>KOŁO FORTUNY</h1>
 <?php
+    echo '<table>';
+    foreach ($_SESSION["_prizes"] as $key => $value) {
+        echo '<tr>';
+        echo '<td class = "tdh">' . $key . '</td>';
+        echo '</tr>';
+    }
+    foreach ($_SESSION["_prizes"] as $key => $value) {
+        echo '<tr>';
+        echo '<td class = "tdh">' . $value . '</td>';
+        echo '</tr>';
+    }
+
+    echo '</table>';
+
     echo '<h2>Kolej gracza: ' . $_SESSION["_playersNames"][$_SESSION["_turn"]] . '</h2>';
 ?>
+</header>
 <aside>
     <table>
         <thead>
@@ -145,10 +165,10 @@ if ($_SESSION["_win"] == 1) {
     echo '<div style = "clear:both"></div>';
     echo '</main>';
 
-    echo '<div>';
+//    echo '<div>';
     printSession();
-    printArr($_COOKIE);
-    echo '</div>';
+//    printArr($_COOKIE);
+//    echo '</div>';
 ?>
 </body>
 <script>

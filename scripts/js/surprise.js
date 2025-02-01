@@ -1,18 +1,20 @@
 function isChecked() {
     const checkBox = document.getElementById("surprise");
     const howLong = document.getElementById("howLong");
-    const players = document.getElementById("players")
-    if (checkBox.checked) {
-        howLong.value = Math.floor(Math.random() * 8) + 4;
-        howLong.readOnly = true;
+    const players = document.getElementById("players");
 
-        players.value = Math.floor(Math.random() * 2) + 1;
-        players.readOnly = true;
+    if (checkBox.checked) {
+        howLong.value = getRandomValue(4, 11);
+        players.value = getRandomValue(1, 3);
     } else {
         howLong.value = 5;
-        howLong.readOnly = false;
-
         players.value = 1;
-        players.readOnly = false
     }
+
+    howLong.readOnly = checkBox.checked;
+    players.readOnly = checkBox.checked;
+}
+
+function getRandomValue(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
 }

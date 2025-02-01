@@ -3,45 +3,50 @@ h3 {
     margin-bottom: 20px;
 }
 
-.message {
+.message, aside, main {
     float: left;
+}
+
+.message {
     width: 50%;
     margin-left: 0;
 }
 
 aside {
     width: 23%;
-    float: left;
 }
 
 main {
-    width:77%;
+    width: 77%;
     height: 80%;
-    float: left;
 }
 
-table,td {
-    border: white dotted 6px;
+table, td {
+    border: 6px white dotted;
     border-collapse: collapse;
     font-size: 30px;
+    text-align: center;
 }
 
 table {
+    width: 100%;
     height: 80%;
+}
+
+header {
     width: 100%;
-    text-align: center;
 }
-header{
-    width: 100%;
-}
-.tdh{
-    width:25%;
-    height:20%;
-}
-.trh{
+
+.tdh {
+    width: 25%;
     height: 20%;
 }
-#tablePrizes{
+
+.trh {
+    height: 20%;
+}
+
+#tablePrizes {
     width: 100%;
     height: 20%;
 }

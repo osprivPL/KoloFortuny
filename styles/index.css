@@ -1,10 +1,10 @@
-#lblSurprise :checked ~ #surprise{
+#lblSurprise:checked ~ #surprise {
     background-color: #2196F3;
 }
-#surprise{
-    background-color: #eeeeee;
+
+#surprise {
+    background-color: #eee;
     height: 25px;
     margin-left: 5%;
     width: 25px;
-
 }

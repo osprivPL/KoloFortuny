@@ -54,6 +54,10 @@ if ($_SESSION['_actualString'] != $_SESSION['_correctAns']) {
     }
 }
 if ($_SESSION["_correctAns"] == $_SESSION["_actualString"]) {
+    $_SESSION["_turn"]--;
+    if ($_SESSION["_turn"] == -1) {
+        $_SESSION["_turn"] = $_SESSION["_players"] - 1;
+    }
     $_SESSION["_win"] = 1;
 }
 

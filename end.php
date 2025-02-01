@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    require "scripts/php/printArr.php";
+session_start();
+require "scripts/php/printArr.php";
 //    error_reporting(E_ERROR | E_PARSE);
 ?>
 <html lang="pl">
@@ -11,7 +11,7 @@
 
     <meta name="author" content="Michał Ożdżyński">
     <link rel="stylesheet" href="styles/style.css">
-<!--    <link rel="stylesheet" href ="styles/end.css">-->
+    <!--    <link rel="stylesheet" href ="styles/end.css">-->
     <title>WISIELEC</title>
 
 </head>
@@ -20,17 +20,18 @@
     <h1>WISIELEC</h1>
     <div class="message">Gra zakończona!</div>
     <?php
-        if ($_SESSION["_win"] == 1){
-            echo '<div class="message">';
-                echo "WYGRYWA GRACZ: ".$_SESSION["_nick".$_SESSION["_turn"]];
-            echo '</div>';
-        }
-//        else{
-//            echo '<div class="message">PRZEGRANA!</div>';
-//        }
-        echo "<div class='message'>Poprawna odpowiedź: ".$_SESSION["_correctAns"]."</div>";
-        
-//        printArr($_SESSION);
+    if ($_SESSION["_win"] == 1){
+        echo '<div class="message">';
+//        printSession();
+        echo "WYGRYWA GRACZ: ".$_SESSION["_playersNames"][$_SESSION["_turn"]]."<br>";
+        echo '</div>';
+    }
+    //        else{
+    //            echo '<div class="message">PRZEGRANA!</div>';
+    //        }
+    echo "<div class='message'>Poprawna odpowiedź: ".$_SESSION["_correctAns"]."</div>";
+
+    //        printArr($_SESSION);
     ?>
 
 

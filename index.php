@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_unset();
-
+require "scripts/php/printArr.php";
 //error_reporting(E_ERROR | E_PARSE);
 
 ?>
@@ -33,8 +33,8 @@ session_unset();
         </form>
     </div>
     <?php
-    printArr($_SERVER);
-    printArr($_COOKIE);
+//    printArr($_SERVER["HTTP_COOKIE"]);
+//    printArr($_COOKIE);
     ?>
 </div>
 </body>

@@ -42,7 +42,6 @@ if (!$_SESSION["_first"]) {
         }
         if ($found) {
             $_SESSION["_guessed"][] = $guess;
-            $_SESSION["_turn"]--;
         } else {
             $_SESSION["_wrong"][] = $guess;
         }
@@ -51,10 +50,10 @@ if (!$_SESSION["_first"]) {
     }
     $_SESSION["_prizes"][$_SESSION["_playersNames"][$_SESSION["_turn"]]] += $counter * $_COOKIE["price"];
 
-    $_COOKIE["price"] = 0;
+//    $_COOKIE["price"] = 0;
 }
 
-if ($_SESSION["_turn"] != -2) {
+if ($_SESSION["_turn"] != -3) {
     $_SESSION["_turn"]++;
     if ($_SESSION["_turn"] == $_SESSION["_players"]) {
         $_SESSION["_turn"] = 0;
@@ -119,7 +118,7 @@ if ($_SESSION["_win"] == 1) {
         </tbody>
     </table>
     <button class="send" id="losuj" onclick="price()">LOSUJ</button>
-    <p id="valueP"></p>
+<!--    <p id="valueP"></p>-->
 </aside>
 <main>
     <?php
@@ -149,9 +148,10 @@ if ($_SESSION["_win"] == 1) {
     echo '<div style="clear:both"></div>';
     ?>
 </main>
-<div>
-    <?php printSession(); ?>
-</div>
+<!--<div>-->
+<!--    --><?php //printSession();
+//            printArr($_COOKIE)?>
+<!--</div>-->
 <script>
     window.onload = function () {
         document.getElementById('guess').focus();

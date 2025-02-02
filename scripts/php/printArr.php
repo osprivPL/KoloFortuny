@@ -18,7 +18,7 @@ function printSession(): void
 {
     foreach ($_SESSION as $key => $value) {
         if (is_array($value)) {
-            echo $key.'=>';
+            echo $key.'=>:<br>';
             printArr($value);
             echo '<br>';
         } else {

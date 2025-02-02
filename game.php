@@ -41,7 +41,8 @@ if (!$_SESSION["_first"]) {
             }
         }
         if ($found) {
-            $_SESSION["__guessed"][] = $guess;
+            $_SESSION["_guessed"][] = $guess;
+            $_SESSION["_turn"]--;
         } else {
             $_SESSION["_wrong"][] = $guess;
         }
@@ -49,6 +50,8 @@ if (!$_SESSION["_first"]) {
         $_POST["guess"] = '';
     }
     $_SESSION["_prizes"][$_SESSION["_playersNames"][$_SESSION["_turn"]]] += $counter * $_COOKIE["price"];
+
+    $_COOKIE["price"] = 0;
 }
 
 if ($_SESSION["_turn"] != -2) {

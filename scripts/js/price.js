@@ -45,7 +45,7 @@ async function price() {
 
     document.getElementById("losuj").disabled = true;
     document.getElementById("strzel").disabled = false;
-    document.getElementById("valueP").innerHTML = String(values[location]);
+    // document.getElementById("valueP").innerHTML = String(values[location]);
     setCookie("price", values[location]);
 
 
